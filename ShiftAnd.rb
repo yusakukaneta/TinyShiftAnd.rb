@@ -10,6 +10,7 @@ class ShiftAnd
     @T = text
     @N = @T.size
   end
+
   # Preprocessing
   def preprocess()
     # Build bitmask I
