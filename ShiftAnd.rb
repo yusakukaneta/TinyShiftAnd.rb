@@ -14,7 +14,7 @@ class ShiftAnd
   # Preprocessing
   def preprocess()
     # Build bitmask I
-    @I = 1 << (@M-1);
+    @F = 1 << (@M-1);
     # Build bitmask B
     @B = Array.new(AlphaSize) { 0 }
     (0...@M).each do |j|
@@ -27,7 +27,7 @@ class ShiftAnd
     mskS = 0
     (0...@N).each do |i|
       mskS = ((mskS << 1) | 1) & @B[@T[i]];
-      return i-@M+1 if (mskS & @I) != 0
+      return i-@M+1 if (mskS & @F) != 0
     end
     return -1
   end
